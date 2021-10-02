@@ -3,12 +3,13 @@ package com.programming;
 import java.util.Scanner;
 
 public class LineComparison {
-
     Scanner sc = new Scanner(System.in);
+
 
     public static void main(String[] args) {
         System.out.println("Welcome to Line length comparison computation program");
-
+        LineComparison lineCompare = new LineComparison();
+        lineCompare.compareOfTwoLines();
         }
 
     public double lengthOfLine(){
@@ -34,11 +35,17 @@ public class LineComparison {
         String s1 = String.valueOf(length1);
         String s2 = String.valueOf(length2);
 
-        if (s1.equals(s2)){
+        if (s1.compareTo(s2) >0){
+            System.out.println("Length of line-1 is greater than length of line-2");
+        }
+        else if (s1.compareTo(s2)<0){
+            System.out.println("Length of line-2 is greater than length of line-1");
+        }
+        else if (s1.equals(s2)){
             System.out.println("Both the lines are equal");
         }
         else {
-            System.out.println("Lines are un-equal");
+            System.out.println("Both the lines are un-equal");
         }
     }
 }
